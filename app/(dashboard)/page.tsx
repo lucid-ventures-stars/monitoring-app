@@ -1,6 +1,7 @@
 import { ACCOUNTS } from '@/lib/config/accounts'
 import { fetchContentInventory, fetchPlatformKpis, fetchTopPosts } from '@/lib/api/fetchers'
 import { KpiCard } from '@/components/dashboard/KpiCard'
+import { AccountConnections } from '@/components/dashboard/AccountConnections'
 import { TimeSeriesChart } from '@/components/dashboard/TimeSeriesChart'
 import { ContentInventoryTable } from '@/components/dashboard/ContentInventoryTable'
 import { PostsTable } from '@/components/dashboard/PostsTable'
@@ -28,6 +29,8 @@ export default async function DashboardPage() {
           Placeholder filters wired to sidebar
         </div>
       </header>
+
+      <AccountConnections />
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {kpis.map((kpi) => (
